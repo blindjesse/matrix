@@ -1,7 +1,7 @@
 # version code d345910f07ae
 coursera = 1
 # Please fill out this stencil and submit using the provided submission script.
-
+from random import randint
 
 
 
@@ -32,7 +32,19 @@ def makeInverseIndex(strlist):
     >>> makeInverseIndex(['hello world','hello','hello cat','hellolot of cats']) == {'hello': {0, 1, 2}, 'cat': {2}, 'of': {3}, 'world': {0}, 'cats': {3}, 'hellolot': {3}}
     True
     """
-    pass
+    inverseIndex = dict()
+    for indexAndDoc in enumerate(strlist):
+        index, doc = (indexAndDoc)
+        for word in doc.split():
+            if word not in inverseIndex.keys():
+                inverseIndex[word] = {index}
+            else:
+                inverseIndex[word].add(index)
+            
+    return inverseIndex
+
+
+
 
 
 
@@ -49,7 +61,12 @@ def orSearch(inverseIndex, query):
     >>> orSearch(idx, ['Johann', 'Carl'])
     {0, 2, 3, 4, 5}
     """
-    pass
+    result = set()
+    for word in query:
+        if word in inverseIndex.keys():
+            result = result | inverseIndex[word]
+    return result
+
 
 
 
@@ -66,5 +83,7 @@ def andSearch(inverseIndex, query):
     >>> andSearch(idx, ['Johann', 'Bach'])
     {0, 4}
     """
-    pass
-
+    result = inverseIndex[query[0]]
+    for word in query[1:]:
+        result = result & inverseIndex[word]
+    return result
