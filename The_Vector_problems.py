@@ -13,8 +13,8 @@ from GF2 import one
 p1_v = [-1, 3]
 p1_u = [0, 4]
 p1_v_plus_u = [-1, 7]
-p1_v_minus_u = [1, 1]
-p1_three_v_minus_two_u = [-3, -1]
+p1_v_minus_u = [-1, -1]
+p1_three_v_minus_two_u = [-3, 1]
 
 
 
@@ -22,7 +22,7 @@ p1_three_v_minus_two_u = [-3, -1]
 p2_u = [-1,  1, 1]
 p2_v = [ 2, -1, 5]
 p2_v_plus_u = [1, 0, 6]
-p2_v_minus_u = [3 -2, 4]
+p2_v_minus_u = [3, -2, 4]
 p2_two_v_minus_u = [5, -3, 9]
 p2_v_plus_two_u = [0, 1, 7]
 
@@ -43,7 +43,7 @@ p3_vector_sum_2 = [0, one, one]
 # be written as the sum of any subset of the vectors a, b, c, d, e, and f.
 
 u_0010010 = {'c','d','e'}
-u_0100010 = {'b','c','d','e','f'}
+u_0100010 = {'b','c','d','e'}
 
 
 
@@ -57,21 +57,20 @@ v_0100010 = set()
 
 ## 6: (Problem 6) Solving Linear Equations over GF(2)
 #You should be able to solve this without using a computer.
-x_gf2 = [...]
+x_gf2 = [0, 1, 1, 1]
 
 
 
 ## 7: (Problem 7) Formulating Equations using Dot-Product
 #Please provide each answer as a list of numbers
-v1 = [...]
-v2 = [...]
-v3 = [...]
+v1 = [2, 3, -4, 1]
+v2 = [1, -5, 2, 0]
+v3 = [4, 1, -1, -1]
 
 
 
 ## 8: (Problem 8) Practice with Dot-Product
-uv_a = ...
-uv_b = ...
-uv_c = ...
-uv_d = ...
-
+uv_a = 5
+uv_b = 6
+uv_c = 16
+uv_d = -1
